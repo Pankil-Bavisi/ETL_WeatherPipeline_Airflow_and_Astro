@@ -1,0 +1,28 @@
+1) astro dev init
+- To load and setup the Airflow project inside the project folder (Including all the necessary files)
+
+2) Perform the ETL operations in the code (etlweather.py)
+- Create the "Extract - Transform - Load" Task inside the DAG
+- Setup the Task Workflow, the way it will going to be performed and executed, like., in a sequence
+
+3) astro dev start
+- Start the project and all the container files and program will start executing
+- It will automatically login to the default Airflow page, which port is, 8080
+- By default, Airflow login & password is, 'admin'
+- By default, PostgresSQL login & password is, 'postgres'
+
+	- If there are any error, then fix it and come back with below command,
+	- astro dev restart
+
+4) Manually, trigger the pipeline, and if there is any error, make sure the connection is well established for the various services you've used in your code, like, Postgres, SQlite, etc
+	- Go to Admin -> Connection
+	- 1. Set the connection id: postgres_default
+	- 2. Select the connection type: here, it is 'Postgres'
+	- 3. Host: go the Docker, in your 'project container', check for 'postgres', and then click on it, 		Copy the name of the 'Container's service' above the container's ID.
+
+5) Now, your Pipeline completely working fine, as you've setup the 'connection' and all working Task is shown up in 'Green color'
+
+6) If in Docker, if you see 'Port number' near the 'Postgres' - that means its running fine. But if you click on '5432:5432' port number, it will show you nothing.
+	- For that, you have to Download 'DBeaver' - which is open source tool, that will actually help 	you to connect with any kind of Databases you want!
+	- 
+
